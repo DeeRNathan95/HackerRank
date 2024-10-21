@@ -1,0 +1,119 @@
+Objective
+
+In this challenge, we practice declaring variables using the let and const keywords. Check out the attached tutorial for more details.
+
+Task
+
+Declare a constant variable, , and assign it the value Math.PI. You will not pass this challenge unless the variable is declared as a constant and named PI (uppercase).
+Read a number, , denoting the radius of a circle from stdin.
+Use  and  to calculate the  and  of a circle having radius .
+Print  as the first line of output and print  as the second line of output.
+Input Format
+
+A single integer, , denoting the radius of a circle.
+
+Constraints
+
+ is a floating-point number scaled to at most  decimal places.
+Output Format
+
+Print the following two lines:
+
+On the first line, print the  of the circle having radius .
+On the second line, print the  of the circle having radius .
+Sample Input 0
+
+2.6
+Sample Output 0
+
+21.237166338267002
+16.336281798666924
+Explanation 0
+
+Given the radius , we calculate the following:
+
+We then print  as our first line of output and  as our second line of output.
+
+============================================================================
+Solution;
+function main() {
+    // Write your code here. Read input using 'readLine()' and print output using 'console.log()'.
+    
+    // Print the area of the circle:
+    
+    // Print the perimeter of the circle:
+     const PI = Math.PI;
+    
+    // Example of reading the input (radius) - assuming input is provided in a competitive environment
+    let radius = parseFloat(readLine());  // `readLine()` is typically used in competitive platforms like HackerRank
+    
+    // Calculate the area of the circle: Area = PI * radius^2
+    let area = PI * Math.pow(radius, 2);
+    
+    // Calculate the perimeter of the circle (circumference): Perimeter = 2 * PI * radius
+    let perimeter = 2 * PI * radius;
+    
+    // Print the area of the circle (first line)
+    console.log(area);
+    
+    // Print the perimeter of the circle (second line)
+    console.log(perimeter);
+
+
+============================================================================
+Breakdown explaination:
+Let's break this down step by step, and I'll explain it like we're learning it for the first time:
+
+### 1. **`const PI = Math.PI;`**
+   - **What is `const`?**: It means we’re creating a **constant** variable that won't change.
+   - **What is `PI`?**: `PI` is a special number in math, which is approximately 3.14159. It's the ratio of a circle's circumference to its diameter.
+   - **`Math.PI`**: This is JavaScript’s way of giving us the value of PI (which is roughly 3.14159).
+   
+   So, this line sets `PI` to 3.14159 (or a very close approximation).
+
+### 2. **`let radius = parseFloat(readLine());`**
+   - **`let`**: This is used to create a variable that can change its value.
+   - **`readLine()`**: This function reads the user’s input. Think of it as asking, “What’s the radius of your circle?” and waiting for you to answer.
+   - **`parseFloat()`**: This converts the input (which is usually a **string** like `"2.6"`) into a **number** (like `2.6`). We use `parseFloat()` because we need the radius as a number to do math with it.
+
+   So, this line:
+   - Reads the radius input from the user.
+   - Converts that input into a number.
+   - Stores that number in the variable `radius`.
+
+### 3. **`let area = PI * Math.pow(radius, 2);`**
+   - **What’s this doing?** It’s calculating the **area of the circle**.
+   - **Formula for area of a circle**: The formula is `PI * radius^2`. This means we multiply PI by the square of the radius.
+   - **`Math.pow(radius, 2)`**: This is the JavaScript way of saying “square the radius” (multiply the radius by itself).
+     - So, if `radius = 3`, then `Math.pow(3, 2)` is `3 * 3 = 9`.
+   - Finally, we multiply the result by `PI`.
+
+   So, this line calculates the **area** of the circle and stores it in the `area` variable.
+
+### 4. **`let perimeter = 2 * PI * radius;`**
+   - **What’s this doing?** It’s calculating the **perimeter (or circumference) of the circle**.
+   - **Formula for perimeter of a circle**: The formula is `2 * PI * radius`.
+   - So, we’re multiplying the radius by `2`, and then multiplying by `PI` to get the perimeter.
+
+   This line calculates the **perimeter** (the distance around the edge of the circle) and stores it in the `perimeter` variable.
+
+### 5. **`console.log(area);`**
+   - **What is `console.log()`?**: This prints whatever is inside the parentheses to the screen.
+   - **`console.log(area)`**: This prints the **area** of the circle, which we calculated earlier.
+
+### 6. **`console.log(perimeter);`**
+   - **`console.log(perimeter)`**: This prints the **perimeter** of the circle, which we also calculated.
+
+### Let’s put it all together:
+1. **We define `PI`**, which is 3.14159 (the number used for circles).
+2. **We ask for the radius** of the circle and convert it to a number.
+3. **We calculate the area** using the formula `PI * radius^2`.
+4. **We calculate the perimeter** using the formula `2 * PI * radius`.
+5. **We print both the area and perimeter** so we can see the results.
+
+### Example:
+If the user enters `3` as the radius:
+- **Area**: `3.14159 * 3 * 3 = 28.27` (approximately).
+- **Perimeter**: `2 * 3.14159 * 3 = 18.85` (approximately).
+
+You’ll see both numbers printed on the screen!
